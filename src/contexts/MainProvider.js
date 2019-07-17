@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import ThemeContext from './ThemeContext'
+import {useTheme} from '@material-ui/core'
 
 function MainProvider(props) {
-	const [isDarkMode, toggle] = useState(false)
+	const [isLightTheme, toggleTheme] = useState(true)
+	const theme = useTheme()
 
-	function toggleMode() {
-		toggle(!isDarkMode)
+	function switchTheme() {
+		theme.palette.type = isLightTheme ? 'dark' : 'light'
+		toggleTheme(!isLightTheme)
 	}
 
 	return (
 		<ThemeContext.Provider value={{
-			isDarkMode,
-			toggleMode
+			theme,
+			isLightTheme,
+			switchTheme
 		}}>{props.children}
 		</ThemeContext.Provider>
 	)
