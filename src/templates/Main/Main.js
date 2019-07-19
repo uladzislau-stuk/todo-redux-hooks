@@ -1,19 +1,17 @@
 import React from 'react'
 import { NavBar, Todo } from '../../organism'
 import MainContainer from '../../containers/MainContainer'
-import { styled } from '@material-ui/styles'
+import { Grid } from '@material-ui/core'
 
 export default function Main() {
 	return (
 		<MainContainer>
 			<NavBar />
-			<StyledSection>
-				<Todo />
-			</StyledSection>
+			<Grid container justify='center' style={{ marginTop: 80 }}>
+				<Grid item xs={11} md={8} lg={4}>
+					<Todo />
+				</Grid>
+			</Grid>
 		</MainContainer>
 	)
 }
-
-var StyledSection = styled('section')({
-	marginTop: 80
-})
