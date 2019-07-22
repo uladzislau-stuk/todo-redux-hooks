@@ -7,22 +7,22 @@ export default function TodoList() {
 	return (
 		<MainContext.Consumer>{({ todos, removeTodo, toggleTodo, editTodo, saveTodo, cancelEdit }) => (
 			<Paper>
-				<List>{todos.map((todo, idx) => {
-					console.log(todo.text)
-					return <TodoItem
-							key={todo.id}
-							id={todo.id}
-							idx={idx}
-							text={todo.text}
-							completed={todo.completed}
-							editable={todo.editable}
-							removeTodo={e => removeTodo(todo.id)}
-							toggleTodo={e => toggleTodo(todo.id)}
-							editTodo={e => editTodo(todo.id)}
-							saveTodo={saveTodo}
-							cancelEdit={e => cancelEdit(todo.id)}
-						/>
-				})}</List>
+				<List>{todos.map((todo, idx) => (
+					<TodoItem
+						key={todo.id}
+						id={todo.id}
+						idx={idx}
+						amount={todos.length}
+						text={todo.text}
+						completed={todo.completed}
+						editable={todo.editable}
+						removeTodo={e => removeTodo(todo.id)}
+						toggleTodo={e => toggleTodo(todo.id)}
+						editTodo={e => editTodo(todo.id)}
+						saveTodo={saveTodo}
+						cancelEdit={e => cancelEdit(todo.id)}
+					/>
+				))}</List>
 			</Paper>
 		)}</MainContext.Consumer>
 	)
