@@ -1,0 +1,37 @@
+{
+    "navBar": {
+        "logo": {
+            "name": "Todo"
+        },
+        "buttonSwitchTheme": {
+            "ariaLabel": "Переключить тему"
+        }
+    },
+    "newTodo": {
+        "inputField": {
+            "placeholder": "Новая задача",
+            "ariaLabel": "Ввести новую задачу"
+        },
+        "button": {
+            "ariaLabel": "Создать задачу"
+        }
+    },
+    "todo": {
+        "buttonCancel": {
+            "ariaLabel": "Отменить"
+        },
+        "buttonSave": {
+            "ariaLabel": "Сохранить"
+        },
+        "buttonEdit": {
+            "ariaLabel": "Редактировать"
+        },
+        "buttonDelete": {
+            "ariaLabel": "Удалить"
+        }
+    },
+    "languages": {
+        "en": "Английский",
+        "ru": "Русский"
+    }
+}

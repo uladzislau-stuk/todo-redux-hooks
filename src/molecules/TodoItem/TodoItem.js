@@ -10,6 +10,7 @@ import {
 	Divider
 } from '@material-ui/core'
 import { Edit as EditIcon, Delete as DeleteIcon, Cancel as CancelIcon, Save as SaveIcon } from '@material-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 export default function TodoItem ({
 	id, idx, text, completed, editable, amount,
@@ -17,6 +18,7 @@ export default function TodoItem ({
 }) {
 	const [editedTask, setEditedTask] = useState(text)
 	const labelId = `checkbox-list-label-${idx}`
+	const { t } = useTranslation()
 
 	return (
 		<>
@@ -51,13 +53,13 @@ export default function TodoItem ({
 									cancelEdit()
 								}}
 								edge='end'
-								aria-label='Cancel changes'>
+								aria-label={t(`Cancel`)}>
 								<CancelIcon />
 							</IconButton>
 							<IconButton
 								onClick={e => saveTodo(id, editedTask)}
 								edge='end'
-								aria-label='Save changes'>
+								aria-label={t(`Save`)}>
 								<SaveIcon />
 							</IconButton>
 						</Fragment>
@@ -66,13 +68,13 @@ export default function TodoItem ({
 							<IconButton
 								onClick={editTodo}
 								edge='end'
-								aria-label='Edit task'>
+								aria-label={t(`Edit`)}>
 								<EditIcon />
 							</IconButton>
 							<IconButton
 								onClick={removeTodo}
 								edge='end'
-								aria-label='Delete task'>
+								aria-label={t(`Delete`)}>
 								<DeleteIcon />
 							</IconButton>
 						</Fragment>
