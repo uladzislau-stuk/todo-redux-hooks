@@ -2,6 +2,7 @@ import React, { Suspense, useContext } from 'react'
 import { Main } from '../'
 import { AppContext } from '../../contexts/AppContext'
 import { ThemeProvider } from '@material-ui/styles'
+import ErrorBoundary from '../Error/ErrorBoundary'
 
 function App() {
 	const { uiTheme } = useContext(AppContext)
@@ -9,7 +10,9 @@ function App() {
 	return (
 		<Suspense fallback={<div>Loading</div>}>
 			<ThemeProvider theme={ uiTheme }>
-				<Main />
+				<ErrorBoundary>
+					<Main />
+				</ErrorBoundary>
 			</ThemeProvider>
 		</Suspense>
 	)

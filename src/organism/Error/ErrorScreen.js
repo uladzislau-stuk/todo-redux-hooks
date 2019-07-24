@@ -1,12 +1,7 @@
 import React from 'react';
-import { Typography } from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { Typography, Box } from '@material-ui/core'
 import { styled } from '@material-ui/styles'
-
-ErrorScreen.propTypes = {
-	emoji: PropTypes.string,
-	heading: PropTypes.string,
-	subheading: PropTypes.string
-}
 
 function ErrorScreen(props) {
 	const {
@@ -15,17 +10,28 @@ function ErrorScreen(props) {
 		subheading
 	} = props
 
-	const moji = emoji || '😌 Oops!'
-	const head = heading || 'Something \' went wrong.'
+	const moji = emoji || '😌'
+	const head = heading || 'Something went wrong.'
 	const subhead = subheading || 'Error code 404'
 
 	return (
 		<FallbackContainer>
-			<span role='img' aria-label='emoji'>{moji}</span>
-			<Typography component='h1' variant='h4'>{head}</Typography>
-			<Typography component='h2' variant='subtitle1'>{subhead}</Typography>
+			<Box>
+				<span role='img' aria-label='emoji'>{moji}</span>
+				<Typography component='span' variant='h5'>&nbsp;&nbsp;Oops!</Typography>
+			</Box>
+			<Content>
+				<Typography component='h1' variant='h4'>{head}</Typography>
+				<Typography component='h2' variant='subtitle1'>{subhead}</Typography>
+			</Content>
 		</FallbackContainer>
 	)
+}
+
+ErrorScreen.propTypes = {
+	emoji: PropTypes.string,
+	heading: PropTypes.string,
+	subheading: PropTypes.string
 }
 
 var FallbackContainer = styled('div')({
@@ -35,6 +41,10 @@ var FallbackContainer = styled('div')({
 	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center'
+})
+
+var Content = styled('div')({
+	textAlign: 'center'
 })
 
 export default ErrorScreen
