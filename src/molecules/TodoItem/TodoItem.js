@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, { Fragment, useState} from 'react'
 import {
 	ListItem,
 	ListItemIcon,
@@ -21,7 +21,7 @@ export default function TodoItem ({
 	const { t } = useTranslation()
 
 	return (
-		<>
+		<Fragment>
 			<ListItem role={undefined} dense button>
 				<ListItemIcon>
 					<Checkbox
@@ -84,6 +84,6 @@ export default function TodoItem ({
 				&&
 				<Divider />
 			}
-		</>
+		</Fragment>
 	)
 }

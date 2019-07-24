@@ -1,19 +1,16 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useContext } from 'react'
 import { Main } from '../'
-import AppProvider, { AppContext } from '../../contexts/AppContext'
+import { AppContext } from '../../contexts/AppContext'
 import { ThemeProvider } from '@material-ui/styles'
 
 function App() {
+	const { uiTheme } = useContext(AppContext)
+
 	return (
 		<Suspense fallback={<div>Loading</div>}>
-			<AppProvider>
-				<AppContext.Consumer>{({ uiTheme }) => (
-					<ThemeProvider theme={ uiTheme }>
-						<Main />
-					</ThemeProvider>
-				)}
-				</AppContext.Consumer>
-			</AppProvider>
+			<ThemeProvider theme={ uiTheme }>
+				<Main />
+			</ThemeProvider>
 		</Suspense>
 	)
 }
