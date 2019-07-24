@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import ErrorScreen from '../../organism/Error/ErrorScreen'
 
 ErrorBoundary.propTypes = {
 	children: PropTypes.element.isRequired,
@@ -26,7 +27,7 @@ class ErrorBoundary extends Component {
 				return <FallbackComponent />
 			}
 
-			// return default error component
+			return <ErrorScreen />
 		}
 
 		return children
