@@ -53,13 +53,13 @@ export default function TodoItem ({
 									cancelEdit()
 								}}
 								edge='end'
-								aria-label={t(`Cancel`)}>
+								aria-label={t(`buttonCancel.ariaLabel`)}>
 								<CancelIcon />
 							</IconButton>
 							<IconButton
 								onClick={e => saveTodo(id, editedTask)}
 								edge='end'
-								aria-label={t(`Save`)}>
+								aria-label={t(`buttonSave.ariaLabel`)}>
 								<SaveIcon />
 							</IconButton>
 						</Fragment>
@@ -68,13 +68,13 @@ export default function TodoItem ({
 							<IconButton
 								onClick={editTodo}
 								edge='end'
-								aria-label={t(`Edit`)}>
+								aria-label={t(`buttonEdit.ariaLabel`)}>
 								<EditIcon />
 							</IconButton>
 							<IconButton
 								onClick={removeTodo}
 								edge='end'
-								aria-label={t(`Delete`)}>
+								aria-label={t(`buttonDelete.ariaLabel`)}>
 								<DeleteIcon />
 							</IconButton>
 						</Fragment>

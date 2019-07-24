@@ -3,7 +3,7 @@ import XHR from 'i18next-xhr-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
-const availableLanguages = ['en', 'ru']
+export const availableLanguages = ['en', 'ru']
 
 i18n.use(XHR) // load translation using
 	.use(LanguageDetector) // detect user language
