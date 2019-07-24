@@ -1,4 +1,4 @@
-import React, { Fragment, useState} from 'react'
+import React, { Fragment, useState } from 'react'
 import {
 	ListItem,
 	ListItemIcon,
@@ -53,13 +53,13 @@ export default function TodoItem ({
 									cancelEdit()
 								}}
 								edge='end'
-								aria-label={t(`buttonCancel.ariaLabel`)}>
+								aria-label={t(`todo.buttonCancel.ariaLabel`)}>
 								<CancelIcon />
 							</IconButton>
 							<IconButton
 								onClick={e => saveTodo(id, editedTask)}
 								edge='end'
-								aria-label={t(`buttonSave.ariaLabel`)}>
+								aria-label={t(`todo.buttonSave.ariaLabel`)}>
 								<SaveIcon />
 							</IconButton>
 						</Fragment>
@@ -68,13 +68,13 @@ export default function TodoItem ({
 							<IconButton
 								onClick={editTodo}
 								edge='end'
-								aria-label={t(`buttonEdit.ariaLabel`)}>
+								aria-label={t(`todo.buttonEdit.ariaLabel`)}>
 								<EditIcon />
 							</IconButton>
 							<IconButton
 								onClick={removeTodo}
 								edge='end'
-								aria-label={t(`buttonDelete.ariaLabel`)}>
+								aria-label={t(`todo.buttonDelete.ariaLabel`)}>
 								<DeleteIcon />
 							</IconButton>
 						</Fragment>
