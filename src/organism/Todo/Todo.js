@@ -1,6 +1,5 @@
 import React from 'react'
-import TodoList from '../../molecules/TodoList/TodoList'
-import NewTodo from '../../molecules/NewTodo/NewTodo'
+import { TodoList, NewTodo, Footer } from '../../molecules'
 import { styled } from '@material-ui/styles'
 
 export default function Todo() {
@@ -8,6 +7,7 @@ export default function Todo() {
 		<StyledContainer>
 			<NewTodo />
 			<TodoList />
+			<Footer />
 		</StyledContainer>
 	)
 }
