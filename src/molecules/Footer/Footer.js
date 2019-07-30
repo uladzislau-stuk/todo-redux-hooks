@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { styled } from '@material-ui/styles'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ButtonGroup, Button } from '@material-ui/core'
 
+// TODO: Research
+const FilterLink = React.forwardRef((props, ref) => <Link innerRef={ref} {...props} />);
+
 function Footer() {
 	return (
-		<div>
+		<Fragment>
 			<ButtonGroup
-				variant='contained'
-				color='secondary'
+				fullWidth
+				color='primary'
 				size='large'
 				aria-label='Filters'
 			>
-				<Button>All</Button>
-				<Button>Completed</Button>
-				<Button>Active</Button>
+				<Button style={leftButtonStyle} component={FilterLink} to='/all'>All</Button>
+				<Button component={FilterLink} to='/completed'>Completed</Button>
+				<Button style={rightButtonStyle} component={FilterLink} to='/active'>Active</Button>
 			</ButtonGroup>
-		</div>
+		</Fragment>
 	)
+}
+
+const leftButtonStyle = {
+	borderRadius: '0 0 0 4px'
+}
+
+const rightButtonStyle = {
+	borderRadius: '0 0 4px 0'
 }
 
 Footer.propTypes = {
