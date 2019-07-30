@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { List, Paper } from '@material-ui/core'
-import { styled } from '@material-ui/styles'
 import TodoItem from '../TodoItem/TodoItem'
 import { MainContext } from '../../contexts/MainContext'
 

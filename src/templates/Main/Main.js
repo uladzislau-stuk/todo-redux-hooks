@@ -1,11 +1,15 @@
 import React from 'react'
 import { NavBar, Todo } from '../../organism'
 import MainContainer from '../../containers/MainContainer'
+import { withRouter } from 'react-router'
 import { Grid } from '@material-ui/core'
 
-export default function Main() {
+function Main({ match: { params } }) {
 	return (
-		<MainContainer>
+		<MainContainer filter={params.filter
+			? `SHOW_${params.filter.toUpperCase()}`
+			: 'SHOW_ALL'
+		}>
 			<NavBar />
 			<Grid container justify='center' style={{ marginTop: 80 }}>
 				<Grid item xs={11} md={8} lg={4}>
@@ -15,3 +19,5 @@ export default function Main() {
 		</MainContainer>
 	)
 }
+
+export default withRouter(Main)

@@ -13,9 +13,9 @@ const getVisibleTodos = (todos, filter) => {
 			return todos
 	}
 }
-
-const mapStateToProps = state => ({
-	todos: getVisibleTodos(state.todos, state.visibilityFilter)
+// ownProps - that is an object with every props passed to container
+const mapStateToProps = (state, ownProps) => ({
+	todos: getVisibleTodos(state.todos, ownProps.filter)
 })
 
 const mapDispatchToProps = {

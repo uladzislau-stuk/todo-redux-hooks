@@ -9,7 +9,7 @@ import './i18n'
 const Root =  ({ store }) => (
 	<Provider store={store}>
 		<Router>
-			<Route exact path='/*' component={() => (
+			<Route exact path='/:filter?' component={() => (
 				<AppProvider>
 					<App />
 				</AppProvider>
