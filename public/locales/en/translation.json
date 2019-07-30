@@ -1,0 +1,37 @@
+{
+    "navBar": {
+        "logo": {
+            "name": "Todo"
+        },
+        "buttonSwitchTheme": {
+            "ariaLabel": "Switch theme"
+        }
+    },
+    "newTodo": {
+        "inputField": {
+            "placeholder": "New task",
+            "ariaLabel": "Create new task"
+        },
+        "button": {
+            "ariaLabel": "Add task"
+        }
+    },
+    "todo": {
+        "buttonCancel": {
+            "ariaLabel": "Cancel"
+        },
+        "buttonSave": {
+            "ariaLabel": "Save"
+        },
+        "buttonEdit": {
+            "ariaLabel": "Edit"
+        },
+        "buttonDelete": {
+            "ariaLabel": "Delete"
+        }
+    },
+    "languages": {
+        "en": "English",
+        "ru": "Russian"
+    }
+}

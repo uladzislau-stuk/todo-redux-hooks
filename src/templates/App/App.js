@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { Suspense, useContext } from 'react'
 import { Main } from '../'
-import AppProvider, { AppContext } from '../../contexts/AppContext'
+import { AppContext } from '../../contexts/AppContext'
 import { ThemeProvider } from '@material-ui/styles'
+import ErrorBoundary from '../Error/ErrorBoundary'
 
 function App() {
+	const { uiTheme } = useContext(AppContext)
+
 	return (
-		<AppProvider>
-			<AppContext.Consumer>{({ uiTheme }) => (
-				<ThemeProvider theme={ uiTheme }>
+		<Suspense fallback={<div>Loading</div>}>
+			<ThemeProvider theme={ uiTheme }>
+				<ErrorBoundary>
 					<Main />
-				</ThemeProvider>
-			)}
-			</AppContext.Consumer>
-		</AppProvider>
+				</ErrorBoundary>
+			</ThemeProvider>
+		</Suspense>
 	)
 }
 
