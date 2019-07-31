@@ -1,32 +1,39 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { ButtonGroup, Button } from '@material-ui/core'
 
-// TODO: Research
-const FilterLink = React.forwardRef((props, ref) => <Link innerRef={ref} {...props} />);
+// https://material-ui.com/components/buttons/ - Third-party routing library
+const FilterLink = React.forwardRef((props, ref) => (
+	<NavLink
+		activeStyle={{ backgroundColor: '#2eb959' }}
+		innerRef={ref}
+		{...props}
+	/>));
 
-function Footer() {
+function Footer({ match: { params } }) {
+	console.log(params.filter)
 	return (
 		<Fragment>
 			<ButtonGroup
 				fullWidth
-				color='primary'
+				variant='contained'
+				color='secondary'
 				size='large'
 				aria-label='Filters'
 			>
-				<Button component={FilterLink} to='/all' style={leftButtonStyle} >All</Button>
+				<Button component={FilterLink} to='/all' style={leftLinkStyle} >All</Button>
 				<Button component={FilterLink} to='/completed'>Completed</Button>
-				<Button component={FilterLink} to='/active' style={rightButtonStyle}>Active</Button>
+				<Button component={FilterLink} to='/active' style={rightLinkStyle}>Active</Button>
 			</ButtonGroup>
 		</Fragment>
 	)
 }
 
-const leftButtonStyle = {
+var leftLinkStyle = {
 	borderRadius: '0 0 0 4px'
 }
 
-const rightButtonStyle = {
+var rightLinkStyle = {
 	borderRadius: '0 0 4px 0'
 }
 
