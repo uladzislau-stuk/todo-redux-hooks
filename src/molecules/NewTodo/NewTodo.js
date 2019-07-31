@@ -19,6 +19,7 @@ function NewTodo() {
 				placeholder={t(`newTodo.inputField.placeholder`)}
 				inputProps={{ 'aria-label': `${t(`newTodo.inputField.ariaLabel`)}` }}
 				fullWidth
+				autoFocus={true}
 			/>
 			<IconButton edge="end" aria-label={t(`newTodo.button.ariaLabel`)} onClick={e => {
 				addTodo(uuid(), newTask)
