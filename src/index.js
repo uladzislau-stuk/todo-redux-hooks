@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Root from './Root'
-import store from './core/createStore'
 import './i18n'
 
-ReactDOM.render(<Root store={store}/>, document.getElementById('root'))
+ReactDOM.render(<Root />, document.getElementById('root'))
